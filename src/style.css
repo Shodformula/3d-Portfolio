@@ -1,0 +1,296 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #1e1a20;
+    scroll-behavior: smooth; /* Added for smooth scrolling */
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1; /* Ensure canvas stays behind the text */
+}
+
+/* Navigation Bar Styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the start of the section */
+    justify-content: center; /* Center content vertically */
+    height: 100vh;
+    position: relative;
+    font-family: 'Cabin', sans-serif;
+    color: #ffeded;
+    text-transform: uppercase;
+    padding: 50px 10% 0; /* Ensure content is not hidden under the nav and adjust for space */
+}
+
+.about {
+    padding: 20px 10%; /* Reduce padding for the About Me section */
+    font-size: 0.9rem; /* Reduce font size */
+    line-height: 1.4; /* Adjust line height for better readability */
+}
+
+/* Ensure different alignment for odd and even sections */
+.section:nth-child(odd) {
+    align-items: flex-start; /* Align content to the start */
+}
+
+.section:nth-child(even) {
+    align-items: flex-end; /* Align content to the end */
+}
+
+/* Adjust the font sizes */
+.section h1,
+.section h2 {
+    font-size: 6vmin; /* Ensure consistent heading sizes, reduced */
+    margin: 0; /* Remove margin to prevent extra space */
+}
+
+.section p {
+    font-size: 1rem; /* Subheading size */
+    text-transform: none;
+    margin-top: 1rem; /* Space below main heading */
+}
+
+/* Project Boxes */
+.projects-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-box {
+    background: #27232c; /* Slightly different background color */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    min-width: 250px; /* Increased min-width */
+    max-width: 350px; /* Increased max-width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-box:hover {
+    transform: translateY(-10px);
+}
+
+.project-box img {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.project-box h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden; /* Ensures content does not overflow the box */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
+}
+
+.project-box p {
+    margin: 10px 0;
+    font-size: 1rem; /* Make the description text smaller */
+    text-transform: none; /* Remove uppercase transformation */
+    white-space: normal; /* Allow the description to wrap */
+}
+
+.project-box a {
+    color: #ffeded; /* Match other text color */
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif; /* Match other text font */
+    margin-top: auto; /* Push link to the bottom */
+}
+
+.project-box a:hover {
+    text-decoration: underline;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #ffeded;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    width: 20px;
+    height: 20px;
+    background: #ffeded;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-date {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.timeline-content {
+    background: #27232c;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffeded;
+    margin-top: 10px;
+}
+
+/* Ensure animations and shapes do not overlap with text */
+canvas.webgl {
+    z-index: -1; /* Ensure canvas stays behind the text */
+}
+
+/* Resume Icon and Draggable Image Styles */
+#resume-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Cabin', sans-serif;
+    color: #ffeded;
+}
+
+#resume-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #27232c; /* Match project box color */
+    color: #ffeded;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+#resume-icon-container:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+}
+
+#resume-instructions {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.draggable {
+    position: absolute;
+    top: 60px; /* Directly under the button */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Initial size */
+    cursor: grab;
+    z-index: 5; /* Ensure it is above other content */
+    transition: transform 0.2s, width 0.2s;
+}
+
+.draggable.enlarged {
+    width: 40%; /* Enlarge to 40% of the page */
+    z-index: 10;
+    cursor: grabbing;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #27232c;
+    color: #ffeded;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    text-transform: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #333;
+    transform: translateY(-5px);
+}
