@@ -1,4 +1,5 @@
-# Three.js Journey
+# Perosnal Portfolio Website:
+shodformula.github.io/3d-Portfolio/
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
